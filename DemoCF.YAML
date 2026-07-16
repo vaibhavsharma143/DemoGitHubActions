@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: A sample CloudFormation template with YAML comments.
+Description: A sample CloudFormation template with YAML comments in dev env.
 # Resources section
 Resources:
   MyEC2Instance: 
