@@ -2,11 +2,11 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: A sample CloudFormation template with YAML comments in qa env.
 # Resources section
 Resources:
-  MyEC2Instance: 
+  MyEC2Instance:
     Type: AWS::EC2::Instance
-    Properties: 
+    Properties:
       # Linux AMI
-      ImageId: ami-1234567890abcdef0 
+      ImageId: ami-1234567890abcdef0
       InstanceType: t2.micro
       KeyName: MyKey
       BlockDeviceMappings:
@@ -16,3 +16,9 @@ Resources:
             Iops: 200
             DeleteOnTermination: false
             VolumeSize: 20
+
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    DependsOn: MyEC2Instance
+    Properties:
+      BucketName: my-demo-bucket-123456
